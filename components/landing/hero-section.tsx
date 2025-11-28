@@ -22,7 +22,7 @@ interface Props {
 
 export function HeroSection({ lang, dict }: Props) {
   return (
-    <section className="border-b border-border/40 bg-gradient-to-b from-[#fcf7d9] to-white">
+    <section id='hero' className="scroll-mt-28 border-b border-border/40 bg-linear-to-b from-[#fcf7d9] to-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 sm:px-6 lg:flex-row lg:items-center lg:py-16 lg:px-8">
         {/* Left: text */}
         <motion.div

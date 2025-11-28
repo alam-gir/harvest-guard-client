@@ -79,5 +79,27 @@
   "footer": {
     "rights": "All rights reserved.",
     "sdg": "Aligned with SDG goals: Zero Hunger, Climate Action."
-  }
+  },
+  "auth": {
+  "loginTitle": "Log in to your account",
+  "registerTitle": "Create a new account",
+  "name": "Full Name",
+  "email": "Email Address",
+  "password": "Password",
+  "phone": "Mobile Number (optional)",
+  "locationInfo": "Select your location",
+  "division": "Division",
+  "district": "District",
+  "upazila": "Upazila",
+  "village": "Village",
+  "registerBtn": "Register",
+  "loginBtn": "Login",
+  "noAccount": "Don't have an account?",
+  "haveAccount": "Already have an account?",
+  "login": "Login",
+  "register": "Register",
+  "forgotPassword": "Forgot your password?",
+  "rememberMe": "Remember me"
+}
+
 }
