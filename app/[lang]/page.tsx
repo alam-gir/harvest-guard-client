@@ -1,17 +1,11 @@
-import { getDictionary } from '../../get-dictionary'
-import { Locale } from '../../i18n-config'
-import ClientComponentExample from './client-component-example'
-import { use } from 'react'
+import { Locale } from '@/i18n-config'
+import { getDictionary } from '@/get-dictionary'
+import { LandingPage } from '@/components/landing/landing-page'
 
-export default function Home({ params }: { params: Promise<{ lang: Locale }> }) {
-  const { lang } = use(params)
-  const dictionary = use(getDictionary(lang))
-  return (
-    <div>
-      <h1 className="text-3xl font-bold">Server Component (lang: {lang})</h1>
-      <p>{dictionary.welcome}</p>
-      <p>{dictionary.about_us}</p>
-      <ClientComponentExample dictionary={dictionary} />
-    </div>
-  )
+export default async function Page(props: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await props.params  // IMPORTANT FIX
+
+  const dictionary = await getDictionary(lang)
+
+  return <LandingPage lang={lang} dict={dictionary} />
 }

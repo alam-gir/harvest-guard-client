@@ -1,4 +1,83 @@
 {
-  "welcome": "Welcome to our website!",
-  "about_us": "About Us"
+  "nav": {
+    "home": "Home",
+    "problem": "Problem",
+    "how_it_works": "How it works",
+    "features": "Features",
+    "faq": "FAQ",
+    "register": "Register now",
+    "lang_bn": "বাংলা",
+    "lang_en": "English"
+  },
+
+  "hero": {
+    "title": "Protect Your Harvest Before It's Too Late",
+    "subtitle": "Farmers lose thousands of kilograms every year due to unseen humidity, bad storage, and sudden weather changes. Our system watches conditions and gives early warnings so you save more grain.",
+    "cta_primary": "Start for free",
+    "cta_secondary": "See how it works"
+  },
+
+  "problem": {
+    "title": "The Silent Problem After Harvest",
+    "p1": "Most farmers lose crop value due to moisture, insects, and poor storage conditions—often without knowing the real reason.",
+    "stat1_title": "30% Loss",
+    "stat1_sub": "Average grain spoilage in many areas",
+    "stat2_title": "0 Awareness",
+    "stat2_sub": "Farmers rarely get real-time storage alerts",
+    "stat3_title": "24/7 Monitoring",
+    "stat3_sub": "Weather changes affect grains every hour"
+  },
+
+  "how": {
+    "title": "How This Helps Farmers",
+    "step1_title": "Add your crop",
+    "step1_sub": "Just choose crop type and basic storage info.",
+    "step2_title": "Our system monitors weather",
+    "step2_sub": "Temperature, humidity, and rain probability checked every hour.",
+    "step3_title": "Get simple alerts",
+    "step3_sub": "Easy instructions during risky conditions.",
+    "step4_title": "Save your harvest",
+    "step4_sub": "Reduce spoilage and protect months of effort."
+  },
+
+  "story": {
+    "title": "A Farmer’s Before & After Journey",
+    "before": "Before: Storage decisions were based on guesswork. Many sacks spoiled quietly.",
+    "after": "After: Simple alerts and advice helped save grain and improve income."
+  },
+
+  "features": {
+    "title": "What Makes This Useful",
+    "f1_title": "Real-time Weather Checks",
+    "f1_sub": "Monitors your storage conditions continuously.",
+    "f2_title": "Simple Risk Warnings",
+    "f2_sub": "Clear messages you can understand instantly.",
+    "f3_title": "Farmer-Friendly Design",
+    "f3_sub": "Big buttons, simple text, mobile-first.",
+    "f4_title": "Bangla First",
+    "f4_sub": "Everything written in easy Bangla."
+  },
+
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "Is this app free?",
+    "a1": "Yes, the pilot version is completely free for farmers.",
+    "q2": "Does it work on simple smartphones?",
+    "a2": "Yes, it is designed for low-cost Android phones.",
+    "q3": "Do I need internet all the time?",
+    "a3": "No, you only need internet when receiving alerts.",
+    "q4": "Will it support more crops?",
+    "a4": "Yes, we are adding more crops soon."
+  },
+
+  "cta": {
+    "title": "Your harvest deserves protection",
+    "subtitle": "Join thousands of farmers who are already saving their crops.",
+    "button": "Register now"
+  },
+
+  "footer": {
+    "rights": "All rights reserved.",
+    "sdg": "Aligned with SDG goals: Zero Hunger, Climate Action."
+  }
 }
