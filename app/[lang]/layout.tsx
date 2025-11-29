@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import { AuthListener } from "@/components/auth/auth-listener";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({
     <div
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <AuthListener />
       {children}
     </div>
   );

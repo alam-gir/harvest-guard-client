@@ -99,7 +99,34 @@
   "login": "Login",
   "register": "Register",
   "forgotPassword": "Forgot your password?",
-  "rememberMe": "Remember me"
-}
+  "rememberMe": "Remember me",
+  "goToHome": "Go To Home"
+},
+"dashboard": {
+    "welcome": "Welcome back",
+    "nav": {
+      "profile": "Profile",
+      "logout": "Logout"
+    },
+    "stats": {
+      "total_batches": "Total Batches",
+      "active_batches": "Active Batches",
+      "food_saved": "Food Saved (kg)",
+      "success_rate": "Success Rate"
+    },
+    "actions": {
+      "register": "Register New Batch",
+      "profile": "View Profile",
+      "csv": "CSV",
+      "json": "JSON"
+    },
+    "sections": {
+      "my_batches": "My Crop Batches"
+    },
+    "status": {
+      "active": "Active",
+      "completed": "Completed"
+    }
+  }
 
 }

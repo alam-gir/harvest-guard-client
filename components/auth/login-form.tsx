@@ -1,19 +1,49 @@
-"use client"
+"use client";
 
-import { Locale } from "@/i18n-config"
-import { AuthCard } from "@/components/auth/auth-card"
-import { InputField } from "@/components/auth/input-field"
-import { SubmitButton } from "@/components/auth/submit-button"
+import { Locale } from "@/i18n-config";
+import { Dictionary } from "@/get-dictionary";
+import GoToHomeButton from "./go-to-home-button";
+import { useLogin } from "@/hooks/useLogin";
 
-import { Mail, KeyRound } from "lucide-react"
-import { Dictionary } from "@/get-dictionary"
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { AuthCard } from "./auth-card";
+import { LoginFormValues } from "@/lib/zod/auth.schema";
+import { useAuthStore } from "@/lib/store/useAuthStore";
+import { useRouter } from "next/navigation";
 
 type LoginFormProps = {
-  lang: Locale
-  dict: Dictionary
-}
+  lang: Locale;
+  dict: Dictionary;
+};
 
 export function LoginForm({ lang, dict }: LoginFormProps) {
+  const { form, login } = useLogin();
+  const {setUser} = useAuthStore();
+  const router = useRouter();
+
+  const onSubmit = async (values: LoginFormValues) => {
+    try {
+      const res = await login(values);
+      if (res.success) {
+        console.log("Logged in user:", res.data);
+        setUser(res.data);
+        router.push("/dashboard");
+      }
+    } catch (err) {
+      alert("Login failed. Please check your credentials.");
+      console.error(err);
+    }
+  };
+
   return (
     <AuthCard>
       <div className="mb-6 text-center space-y-1">
@@ -27,44 +57,63 @@ export function LoginForm({ lang, dict }: LoginFormProps) {
         </p>
       </div>
 
-      <form
-        className="flex flex-col gap-4"
-        method="post"
-        // action="/api/auth/login" // when backend is ready
-      >
-        <InputField
-          label={dict.auth.email}
-          name="email"
-          type="email"
-          icon={Mail}
-          required
-        />
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col gap-4"
+        >
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{dict.auth.email}</FormLabel>
+                <FormControl>
+                  <Input type="email" placeholder={dict.auth.email} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <InputField
-          label={dict.auth.password}
-          name="password"
-          type="password"
-          icon={KeyRound}
-          required
-        />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{dict.auth.password}</FormLabel>
+                <FormControl>
+                  <Input
+                    type="password"
+                    placeholder={dict.auth.password}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <div className="flex items-center justify-between text-xs sm:text-sm">
-          <label className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              name="remember"
-              className="h-4 w-4 rounded border-input text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            />
-            <span>{dict.auth.rememberMe}</span>
-          </label>
+          <div className="flex items-center justify-between text-xs sm:text-sm">
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                name="remember"
+                className="h-4 w-4 rounded border-input text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+              <span>{dict.auth.rememberMe}</span>
+            </label>
 
-          <a href="#" className="text-primary hover:underline">
-            {dict.auth.forgotPassword}
-          </a>
-        </div>
+            <a href="#" className="text-primary hover:underline">
+              {dict.auth.forgotPassword}
+            </a>
+          </div>
 
-        <SubmitButton text={dict.auth.loginBtn} />
-      </form>
+          <Button type="submit" className="w-full mt-4">
+            {dict.auth.loginBtn}
+          </Button>
+        </form>
+      </Form>
 
       <p className="text-sm text-muted-foreground mt-4 text-center">
         {dict.auth.noAccount}{" "}
@@ -75,6 +124,10 @@ export function LoginForm({ lang, dict }: LoginFormProps) {
           {dict.auth.register}
         </a>
       </p>
+
+      <div className="w-full h-auto flex justify-center items-center p-2">
+        <GoToHomeButton dict={dict} lang={lang} />
+      </div>
     </AuthCard>
-  )
+  );
 }

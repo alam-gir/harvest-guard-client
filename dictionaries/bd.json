@@ -99,6 +99,33 @@
   "login": "লগইন",
   "register": "রেজিস্টার",
   "forgotPassword": "পাসওয়ার্ড ভুলে গেছেন?",
-  "rememberMe": "মনে রাখুন"
-}
+  "rememberMe": "মনে রাখুন",
+  "goToHome": "হোমে যান"
+},
+"dashboard": {
+    "welcome": "স্বাগতম",
+    "nav": {
+      "profile": "প্রোফাইল",
+      "logout": "লগআউট"
+    },
+    "stats": {
+      "total_batches": "মোট ব্যাচ",
+      "active_batches": "সক্রিয় ব্যাচ",
+      "food_saved": "সংরক্ষিত খাদ্য (kg)",
+      "success_rate": "সফলতার হার"
+    },
+    "actions": {
+      "register": "নতুন ব্যাচ নিবন্ধন",
+      "profile": "প্রোফাইল দেখুন",
+      "csv": "CSV",
+      "json": "JSON"
+    },
+    "sections": {
+      "my_batches": "আমার ফসলের ব্যাচ"
+    },
+    "status": {
+      "active": "সক্রিয়",
+      "completed": "সম্পন্ন"
+    }
+  }
 }
